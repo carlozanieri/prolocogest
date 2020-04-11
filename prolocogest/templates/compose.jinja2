@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../static/css/blog.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/css/reset.css">
+    <link rel="stylesheet" href="../static/css/css/styleF.css">
+	<body>
+
+<form action="{{ url_for('handle_data') }}" method="post">
+
+  <table>
+      <tr class="odd">
+   <td></td>
+   <td></td>
+   </tr>
+   <tr><td><b>Data :<input id="data" type="date" name="data"  class="date">
+       Descrizione : <textarea id="descrizione" name="descrizione" rows="1" cols="100"></textarea> </b></td>
+   </tr>
+ <tr class="odd">
+   <td></td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>Cassa Entrate :
+    <input type="decimal"  name="cassaentrate" id="cassaentrate" cols="13" >
+   Cassa Uscite :
+    <input type="decimal"   name="cassauscite" id="cassauscite" cols="13"  >
+   Banca Entrate :
+    <input type="decimal"   name="bancaentrate" id="bancaentrate"  cols="13" >
+    Banca Uscite :
+     <input type="decimal" name="bancauscite" id="bancauscite" cols="13">
+   </td>
+
+   </tr></b>
+    <tr class="odd">
+   <td><center></center></td>
+   <td></td>
+ </tr>
+      <tr cols="20" >
+   <td ><center>  <input type="submit"  value="Conferma Dati"></center></td>
+   <td></td>
+ </tr>
+      <tr >
+   <td><center></center></td>
+   <td></td>
+ </tr>
+</table>
+
+</form>
+
+  <script src="../static/js/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+	function selectFolder(e) {
+   for (var i = 0; i < e.target.files.length; i++) {
+      var s = e.target.files[i].name + '\n';
+      s += e.target.files[i].size + ' Bytes\n';
+      s += e.target.files[i].type;
+      alert(s);
+   }
+}	
+    $(function() {
+      $("input[name=title]").select();
+      $("form.compose").submit(function() {
+          var required = ["title", "markdown","file1"];
+          var form = $(this).get(0);
+          for (var i = 0; i < required.length; i++) {
+              if (!form[required[i]].value) {
+                  $(form[required[i]]).select();
+                  return false;
+              }
+          }
+          return true;
+      });
+    });
+
+  //]]>
+  </script>
+  <script>
+        var el_up = document.getElementById("GFG_UP");
+        var el_down = document.getElementById("GFG_DOWN");
+        el_up.innerHTML =
+          "Type in the box to see whether the input is valid or not.";
+
+        function isValid(el, evnt) {
+            var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+            if (charC == 46) {
+                if (el.value.indexOf('.') === -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                if (charC > 31 && (charC < 48 || charC > 57))
+                    return false;
+            }
+            return true;
+        }
+
+        function GFG_Fun(t, evnt) {
+            var a = isValid(t, evnt);
+            if (a) {
+                el_down.innerHTML = "Typed Valid Character.";
+            } else {
+                el_down.innerHTML = "Typed Invalid Character.";
+            }
+            return a;
+        }
+    </script>

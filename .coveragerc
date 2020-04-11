@@ -1,0 +1,3 @@
+[run]
+source = prolocogest
+omit = prolocogest/test*
