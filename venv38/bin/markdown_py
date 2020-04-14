@@ -1,4 +1,4 @@
-#!/home/carlo/AreaComune/pyramid/prolocogest/venv38/bin/python3
+#!/home/carlo/prolocogest/venv38/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,4 +1,4 @@
-#!/home/carlo/AreaComune/pyramid/prolocogest/venv38/bin/python
+#!/home/carlo/prolocogest/venv38/bin/python
 # EASY-INSTALL-ENTRY-SCRIPT: 'pyramid','console_scripts','ptweens'
 __requires__ = 'pyramid'
 import re
